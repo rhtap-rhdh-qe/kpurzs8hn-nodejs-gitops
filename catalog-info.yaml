@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kpurzs8hn-nodejs-gitops
+  description: This is GitOps manifest for kpurzs8hn-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: kpurzs8hn-nodejs
+    janus-idp.io/tekton: kpurzs8hn-nodejs
+    backstage.io/kubernetes-id: kpurzs8hn-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:kpurzs8hn-nodejs
